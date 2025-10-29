@@ -1,0 +1,17 @@
+package com.example;
+
+public class Idea implements Sim {
+
+	@Override
+	public void typeOfSim() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void networkType() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

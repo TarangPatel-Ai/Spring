@@ -1,0 +1,17 @@
+package com.example;
+
+public class Airtal implements Sim {
+
+	@Override
+	public void typeOfSim() {
+		// TODO Auto-generated method stub
+		System.out.println("This is Airtal Sim");
+	}
+
+	@Override
+	public void networkType() {
+		// TODO Auto-generated method stub
+		System.out.println("it supports 5G network");
+	}
+
+}
