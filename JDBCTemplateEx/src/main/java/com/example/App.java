@@ -39,12 +39,12 @@ public class App
         
      // Fetch and display all students
         System.out.println("\nFetching all student records:");
-        List<Student> students = sdao.retreiveStudentData();
+        List<Student> students = sdao.getallStudents();
         if (students.isEmpty()) {
             System.out.println("No students found in the database.");
         } else {
             for (Student s : students) {
-                System.out.println(s);
+                System.out.println(s.getSid()+" "+s.getSname()+" " +s.getSemail());
             }
         }
         

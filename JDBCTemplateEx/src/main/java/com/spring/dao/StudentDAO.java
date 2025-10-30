@@ -2,10 +2,13 @@ package com.spring.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import com.spring.pojo.Student;
 
@@ -24,21 +27,23 @@ public class StudentDAO {
 		return temp.update(sql);
 	}
 	
-	public List<Student> retreiveStudentData() {
-		String sql = "select * from student";	
-		List<Student> list = new ArrayList<>();
-
-		
-		// Use JdbcTemplate.query with a RowMapper to map ResultSet to Student objects
-        list = temp.query(sql, (rs, rowNum) -> {
-            Student student = new Student();
-            student.setSid(rs.getInt("sid"));
-            student.setSname(rs.getString("sname"));
-            student.setSemail(rs.getString("semail"));
-            return student;
-        });
-
-        return list;
+	public List<Student> getallStudents(){
+		String sql="select * from student";
+		return temp.query(sql,new ResultSetExtractor<List<Student>>() {
+		@Override
+		public List<Student> extractData(ResultSet rs) throws SQLException, DataAccessException {
+		ArrayList<Student> al=new ArrayList<>();
+		while(rs.next()) {
+		Student s=new Student();
+		s.setSid(rs.getInt(1));
+		s.setSname(rs.getString(2));
+		s.setSemail(rs.getString(3));
+		al.add(s);
+		}
+		return al;
+		}
+		});
 	}
+
 	
 }
