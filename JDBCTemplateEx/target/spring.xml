@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Create a bean for Student -->
+<bean id="student" class="com.spring.pojo.Student"></bean>
+
+<!-- Create a bean for StudentDAO -->
+<bean id="studentdao" class="com.spring.dao.StudentDAO">
+	<property name="temp" ref="jdbctemp"></property>
+</bean>
+
+<!-- Create a bean for jdbcTemplate -->
+<bean id="jdbctemp" class="org.springframework.jdbc.core.JdbcTemplate">
+	<property name="dataSource" ref="ds"></property>
+</bean>
+
+
+<!-- Create a bean for datasource -->
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://localhost:3306/students"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="MTpatel@1012"></property>
+	
+</bean>
+                           
+</beans>                           
