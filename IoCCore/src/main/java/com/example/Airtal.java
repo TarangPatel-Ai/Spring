@@ -1,6 +1,16 @@
 package com.example;
 
 public class Airtal implements Sim {
+	
+	private String signal;
+	
+	public String getSignal() {
+		return signal;
+	}
+
+	public void setSignal(String signal) {
+		this.signal = signal;
+	}
 
 	@Override
 	public void typeOfSim() {

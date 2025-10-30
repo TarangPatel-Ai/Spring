@@ -2,6 +2,16 @@ package com.example;
 
 public class Idea implements Sim {
 
+	private String signal;
+	
+	public Idea(String signal) {
+		this.signal = signal;
+	}
+	
+	public String getSignal() {
+		return signal;
+	}
+
 	@Override
 	public void typeOfSim() {
 		

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans/"
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans/ 
-    http://www.springframework.org/schema/beans//spring-beans.xsd">
-    
-    <bean id="airtal" class="com.example.Airtal"></bean>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-</beans>   
+    <bean id="airtal" class="com.example.Airtal">
+    	<property name="signal" value="it has good strength"></property>
+    </bean>
+    
+    <bean id="idea" class="com.example.Idea">
+    	<constructor-arg name="signal" value="it has poor strength"></constructor-arg>
+    </bean>
+
+</beans>
