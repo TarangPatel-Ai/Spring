@@ -1,13 +1,15 @@
 <html>
 <body>
-<h2>Calculations</h2>
+<h2>Employee Details</h2>
 
 <form action="add" method="post">
 
-Enter No.1 <input type="text" name="no1"><br><br>
+Employee No.: <input type="text" name="no"><br><br>
 
-Enter No.2 <input type="text" name="no2"><br><br>
-<input type="submit" value="Calculate"><br><br>
+Employee Name: <input type="text" name="name"><br><br>
+
+Employee Email: <input type="text" name="email"><br><br>
+<input type="submit" value="Register"><br><br>
 
 </form>
 
